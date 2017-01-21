@@ -24,7 +24,7 @@ public class ScanBarCodeActivity extends AppCompatActivity {
                 intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
                 break;
             case R.id.butOther:
-                intent.putExtra("SCAN_FORMATS", "CODE_39,CODE_93,CODE_128,DATA_MATRIX,ITF,CODABAR");
+                intent.putExtra("SCAN_FORMATS", "CODE_39,CODE_93,CODE_128,DATA_MATRIX,ITF,CODEBAR");
                 break;
         }
         startActivityForResult(intent, 0); //Barcode Scanner to scan for us
@@ -42,8 +42,8 @@ public class ScanBarCodeActivity extends AppCompatActivity {
             }
         }
     }
-    public void sendSMS(View v)
-    {
+
+    public void sendSMS(View v)     {
         String number = "12346556";  // The number on which you want to send SMS
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", number, null)));
     }
