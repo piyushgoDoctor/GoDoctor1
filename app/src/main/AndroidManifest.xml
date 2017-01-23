@@ -3,7 +3,8 @@
     package="com.example.godoctor.myapplication1">
 
     <uses-feature android:name="android.hardware.camera" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -14,12 +15,23 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Main2Activity" />
-        <activity android:name=".ScanBarCodeActivity">
-           x
+        <activity android:name=".ScanBarCodeActivity" />
+        <activity android:name=".PdfActivity" />
+        <activity
+            android:name=".newApp.NewMainActivity"
+            android:label="@string/title_activity_new_main"
+            android:theme="@style/AppTheme.NoActionBar">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
-        <activity android:name=".PdfActivity">
+        <activity android:name=".newApp.AddNewPersonActivity" />
+        <activity android:name=".newApp.CreatePageActivity" />
+        <activity android:name=".newApp.RecyclerViewActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

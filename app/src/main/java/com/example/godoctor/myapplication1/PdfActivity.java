@@ -15,7 +15,7 @@ import java.net.URISyntaxException;
 public class PdfActivity extends AppCompatActivity {
 
     private static final int FILE_SELECT_CODE = 101;
-    private static final String TAG = "PDFACTIVITY";
+    private static final String TAG = "PDF ACTIVITY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,8 @@ public class PdfActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent in=new Intent(Intent.ACTION_GET_CONTENT);
-                in.setType("/");
+                in.setType("file/*");
+//                in.setType("text/xml");   //XML file only
                 in.addCategory(Intent.CATEGORY_OPENABLE);
                 try {
                     startActivityForResult(
@@ -60,12 +61,10 @@ public class PdfActivity extends AppCompatActivity {
                         path = FileUtils.getPath(this, uri);
                     } catch (URISyntaxException e) {
                         e.printStackTrace();
+                        Log.e(TAG,e.toString());
                     }
                     Log.d(TAG, "File Path: " + path);
-                    // Get the file instance
-                    // File file = new File(path);
-                    // Initiate the upload
-
+                   
                 }
                 break;
         }
