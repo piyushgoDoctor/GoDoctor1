@@ -1,4 +1,4 @@
-package com.example.godoctor.myapplication1;
+package com.example.godoctor.myapplication1.pre;
 
 import android.content.Context;
 import android.database.Cursor;

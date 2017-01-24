@@ -1,4 +1,4 @@
-package com.example.godoctor.myapplication1;
+package com.example.godoctor.myapplication1.pre;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import com.example.godoctor.myapplication1.R;
 
 public class Main2Activity extends AppCompatActivity {
 

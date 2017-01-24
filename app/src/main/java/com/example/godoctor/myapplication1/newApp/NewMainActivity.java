@@ -167,9 +167,7 @@ public class NewMainActivity extends AppCompatActivity
             lv.setVisibility(View.GONE);
         }else{
             registerForContextMenu(lv);
-
             lv.setAdapter(new ListAdapter(NewMainActivity.this,person));
-
         }
     }
 }

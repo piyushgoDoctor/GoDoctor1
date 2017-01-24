@@ -1,12 +1,14 @@
 package com.example.godoctor.myapplication1.newApp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,7 +21,7 @@ public class FamilyFragment extends Fragment {
 
 
     ArrayList<Person> person=new ArrayList<>();
-    String frag="";
+    String frag=" ";
 
     @Override
     public void setArguments(Bundle args) {
@@ -48,6 +50,17 @@ public class FamilyFragment extends Fragment {
             lv.setAdapter(new ListAdapter(getActivity(),person));
 
         }
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent in=new Intent(getActivity(),DetailsActivity.class);
+                in.putExtra("name",person.get(position).getName());
+                in.putExtra("des",person.get(position).getDescription());
+                startActivity(in);
+            }
+
+        });
 
         return v;
     }

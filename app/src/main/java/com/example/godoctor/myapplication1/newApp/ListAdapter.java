@@ -1,6 +1,7 @@
 package com.example.godoctor.myapplication1.newApp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -81,6 +82,15 @@ public class ListAdapter extends ArrayAdapter<Person> {
               return false;
           }
       });
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in=new Intent(con,DetailsActivity.class);
+                in.putExtra("name",person.get(position).getName());
+                in.putExtra("des",person.get(position).getDescription());
+                con.startActivity(in);
+            }
+        });
         return convertView;
 
     }

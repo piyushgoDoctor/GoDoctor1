@@ -1,4 +1,4 @@
-package com.example.godoctor.myapplication1;
+package com.example.godoctor.myapplication1.pre;
 
 import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
@@ -12,6 +12,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.godoctor.myapplication1.R;
 
 public class MainActivity extends AppCompatActivity {
      EditText email;
