@@ -22,7 +22,7 @@
         <activity
             android:name=".newApp.NewMainActivity"
             android:label="@string/title_activity_new_main"
-            android:theme="@style/AppTheme.NoActionBar"> </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".newApp.AddNewPersonActivity" />
         <activity android:name=".newApp.CreatePageActivity" />
         <activity android:name=".newApp.RecyclerViewActivity">
@@ -61,15 +61,24 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".chatApp.MainActivity">
+        <activity android:name=".chatApp.MainActivity" />
+        <activity android:name=".chatApp.ChatRoom" />
+        <activity android:name=".pre.VolleyActivity"></activity>
+        <activity android:name=".RetroFit.RetroActivity"></activity>
+        <activity android:name=".compression.VideoActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name=".OCR.OcrActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".chatApp.ChatRoom" />
-        <activity android:name=".pre.VolleyActivity">
         </activity>
     </application>
 

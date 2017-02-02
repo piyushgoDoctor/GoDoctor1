@@ -24,11 +24,9 @@ import java.util.Map;
 
 public class ChatRoom  extends AppCompatActivity{
 
-    private Button btn_send_msg;
     private EditText input_msg;
     private TextView chat_conversation;
-
-    private String user_name,room_name;
+    private String user_name;
     private DatabaseReference root ;
     private String temp_key;
 
@@ -37,13 +35,13 @@ public class ChatRoom  extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_room);
 
-        btn_send_msg = (Button) findViewById(R.id.btn_send);
+        Button btn_send_msg = (Button) findViewById(R.id.btn_send);
         input_msg = (EditText) findViewById(R.id.msg_input);
         chat_conversation = (TextView) findViewById(R.id.textView);
 
         user_name = getIntent().getExtras().get("user_name").toString();
-        room_name = getIntent().getExtras().get("room_name").toString();
-        setTitle(" Room - "+room_name);
+        String room_name = getIntent().getExtras().get("room_name").toString();
+        setTitle(" Room -> "+ room_name);
 
         root = FirebaseDatabase.getInstance().getReference().child(room_name);
 
@@ -51,7 +49,7 @@ public class ChatRoom  extends AppCompatActivity{
             @Override
             public void onClick(View view) {
 
-                Map<String,Object> map = new HashMap<String, Object>();
+                Map<String,Object> map = new HashMap<>();
                 temp_key = root.push().getKey();
                 root.updateChildren(map);
 
@@ -98,26 +96,24 @@ public class ChatRoom  extends AppCompatActivity{
 
     }
 
-    private String chat_msg,chat_user_name;
-
     private void append_chat_conversation(DataSnapshot dataSnapshot) {
 
         Iterator i = dataSnapshot.getChildren().iterator();
 
         while (i.hasNext()){
 
-            chat_msg = (String) ((DataSnapshot)i.next()).getValue();
-            chat_user_name = (String) ((DataSnapshot)i.next()).getValue();
+            String chat_msg = (String) ((DataSnapshot) i.next()).getValue();
+            String chat_user_name = (String) ((DataSnapshot) i.next()).getValue();
             NotificationCompat.Builder mBuilder =
                     (NotificationCompat.Builder) new NotificationCompat.Builder(ChatRoom.this)
                             .setSmallIcon(R.mipmap.ic_launcher)
                             .setContentTitle(chat_user_name)
                             .setContentText(chat_msg);
-            mBuilder.setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 });
+            mBuilder.setVibrate(new long[] { 300, 300, 300 });
             NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             manager.notify(0, mBuilder.build());
 
-            chat_conversation.append(chat_user_name +" : "+chat_msg +" \n");
+            chat_conversation.append(chat_user_name +" : "+ chat_msg +" \n");
         }
 
 
