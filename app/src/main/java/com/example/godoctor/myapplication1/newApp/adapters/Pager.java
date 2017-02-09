@@ -1,10 +1,11 @@
-package com.example.godoctor.myapplication1.newApp;
+package com.example.godoctor.myapplication1.newApp.adapters;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
+import com.example.godoctor.myapplication1.newApp.fragments.FamilyFragment;
 
 /**
  * Created by godoctor on 23/1/17.

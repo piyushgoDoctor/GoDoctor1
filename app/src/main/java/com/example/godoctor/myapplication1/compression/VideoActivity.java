@@ -32,13 +32,9 @@ public class VideoActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private EditText editText;
     private ProgressBar progressBar;
-
     public static final String APP_DIR = "VideoCompressor";
-
     public static final String COMPRESSED_VIDEOS_DIR = "/Compressed Videos/";
-
     public static final String TEMP_DIR = "/Temp/";
-
 
     public static void try2CreateCompressDir() {
         File f = new File(Environment.getExternalStorageDirectory(), File.separator + APP_DIR);
@@ -67,20 +63,20 @@ public class VideoActivity extends AppCompatActivity {
                 startActivityForResult(intent, RESULT_CODE_COMPRESS_VIDEO);
             }
         });
-       try{
-        String link="http://demo.digi-corp.com/S2LWebservice/Resources/SampleVideo.mp4";
-        VideoView videoView = (VideoView) findViewById(R.id.VideoView);
-
-        android.widget.MediaController mediaController=new android.widget.MediaController(VideoActivity.this);
-        mediaController.setAnchorView(videoView);
-        Uri video = Uri.parse(link);
-        videoView.setMediaController(mediaController);
-        videoView.setVideoURI(video);
-        videoView.start();
-    } catch (Exception e) {
-        // TODO: handle exception
-        Toast.makeText(this, "Error connecting", Toast.LENGTH_SHORT).show();
-    }
+//       try{
+//        String link="http://demo.digi-corp.com/S2LWebservice/Resources/SampleVideo.mp4";
+//        VideoView videoView = (VideoView) findViewById(R.id.VideoView);
+//
+//        android.widget.MediaController mediaController=new android.widget.MediaController(VideoActivity.this);
+//        mediaController.setAnchorView(videoView);
+//        Uri video = Uri.parse(link);
+//        videoView.setMediaController(mediaController);
+//        videoView.setVideoURI(video);
+//        videoView.start();
+//    } catch (Exception e) {
+//        // TODO: handle exception
+//        Toast.makeText(this, "Error connecting", Toast.LENGTH_SHORT).show();
+//    }
 
 
     }
@@ -138,7 +134,7 @@ public class VideoActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             progressBar.setVisibility(View.VISIBLE);
-            Log.d(TAG,"Start video compression");
+            Log.e(TAG,"Start video compression");
         }
 
         @Override
@@ -151,7 +147,7 @@ public class VideoActivity extends AppCompatActivity {
             super.onPostExecute(compressed);
             progressBar.setVisibility(View.GONE);
             if(compressed){
-                Log.d(TAG,"Compression successfully!");
+                Log.e(TAG,"Compression successfully!");
             }
         }
     }

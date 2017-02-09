@@ -1,10 +1,9 @@
-package com.example.godoctor.myapplication1.newApp;
+package com.example.godoctor.myapplication1.newApp.fragments;
 
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +12,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.godoctor.myapplication1.R;
+import com.example.godoctor.myapplication1.newApp.DbHelper;
+import com.example.godoctor.myapplication1.newApp.models.Person;
+import com.example.godoctor.myapplication1.newApp.activities.DetailsActivity;
+import com.example.godoctor.myapplication1.newApp.adapters.ListAdapter;
 
 import java.util.ArrayList;
 

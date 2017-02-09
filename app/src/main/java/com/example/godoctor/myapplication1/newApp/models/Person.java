@@ -1,4 +1,4 @@
-package com.example.godoctor.myapplication1.newApp;
+package com.example.godoctor.myapplication1.newApp.models;
 
 /**
  * Created by godoctor on 23/1/17.

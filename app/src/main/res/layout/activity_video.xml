@@ -39,11 +39,11 @@
         android:visibility="invisible"
         android:layout_below="@+id/btnCompressVideo"
         android:layout_centerHorizontal="true" />
-    <VideoView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/VideoView"
+    <!--<VideoView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/VideoView"-->
 
-        />
+        <!--/>-->
 
 </RelativeLayout>

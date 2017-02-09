@@ -1,4 +1,4 @@
-package com.example.godoctor.myapplication1.newApp;
+package com.example.godoctor.myapplication1.newApp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.godoctor.myapplication1.R;
+import com.example.godoctor.myapplication1.newApp.DbHelper;
+import com.example.godoctor.myapplication1.newApp.models.Person;
+import com.example.godoctor.myapplication1.newApp.activities.DetailsActivity;
 
 import java.util.ArrayList;
 

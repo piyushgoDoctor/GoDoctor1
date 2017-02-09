@@ -20,12 +20,18 @@
         <activity android:name=".pre.ScanBarCodeActivity" />
         <activity android:name=".pre.PdfActivity" />
         <activity
-            android:name=".newApp.NewMainActivity"
+            android:name=".newApp.activities.NewMainActivity"
             android:label="@string/title_activity_new_main"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".newApp.AddNewPersonActivity" />
-        <activity android:name=".newApp.CreatePageActivity" />
-        <activity android:name=".newApp.RecyclerViewActivity">
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".newApp.activities.AddNewPersonActivity" />
+        <activity android:name=".newApp.activities.CreatePageActivity" />
+        <activity android:name=".newApp.activities.RecyclerViewActivity">
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
@@ -34,7 +40,7 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".newApp.DetailsActivity" />
+        <activity android:name=".newApp.activities.DetailsActivity" />
         <!--
      Set custom default icon. This is used when no icon is set for incoming notification messages.
      See README(https://goo.gl/l4GJaQ) for more.
@@ -63,23 +69,19 @@
 
         <activity android:name=".chatApp.MainActivity" />
         <activity android:name=".chatApp.ChatRoom" />
-        <activity android:name=".pre.VolleyActivity"></activity>
-        <activity android:name=".RetroFit.RetroActivity"></activity>
-        <activity android:name=".compression.VideoActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        </activity>
+        <activity android:name=".pre.VolleyActivity" />
+        <activity android:name=".RetroFit.RetroActivity" />
+        <activity android:name=".compression.VideoActivity"></activity>
         <activity android:name=".OCR.OcrActivity">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
+        <activity android:name=".newApp.activities.AddNewPageActivity"></activity>
     </application>
 
 </manifest>

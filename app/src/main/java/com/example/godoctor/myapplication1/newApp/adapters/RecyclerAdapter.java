@@ -1,4 +1,4 @@
-package com.example.godoctor.myapplication1.newApp;
+package com.example.godoctor.myapplication1.newApp.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.godoctor.myapplication1.R;
+import com.example.godoctor.myapplication1.newApp.models.Person;
+import com.example.godoctor.myapplication1.newApp.activities.NewMainActivity;
+import com.example.godoctor.myapplication1.newApp.activities.RecyclerViewActivity;
 
 import java.util.ArrayList;
 
@@ -18,12 +21,12 @@ import java.util.ArrayList;
  * Created by godoctor on 23/1/17.
  */
 
-class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
 
     private ArrayList<Person> arrayList;
     Context con;
 
-    RecyclerAdapter(ArrayList<Person> arr, RecyclerViewActivity recyclerViewActivity) {
+    public RecyclerAdapter(ArrayList<Person> arr, RecyclerViewActivity recyclerViewActivity) {
        arrayList =new ArrayList<>();
         arrayList=arr;
         Log.e("size==",arr.size()+"");

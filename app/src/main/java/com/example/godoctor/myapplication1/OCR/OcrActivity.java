@@ -210,7 +210,7 @@ public class OcrActivity extends AppCompatActivity implements ActivityCompat.OnR
 
 
         if ( lang.equalsIgnoreCase("eng") ) {
-            extractedText = extractedText.replaceAll("[^a-zA-Z0-9]+", "\n");
+            extractedText = extractedText.replaceAll("[^a-zA-Z0-9]+", " ");
         }
 
         extractedText = extractedText.trim();
@@ -263,7 +263,7 @@ public class OcrActivity extends AppCompatActivity implements ActivityCompat.OnR
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-//            textView.setText("Bencho! hutiya h ke?");
+//            textView.setText("");
         }
     }
 //    @Override

@@ -1,4 +1,4 @@
-package com.example.godoctor.myapplication1.newApp;
+package com.example.godoctor.myapplication1.newApp.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -12,8 +12,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.godoctor.myapplication1.R;
-
-import java.util.ArrayList;
+import com.example.godoctor.myapplication1.newApp.DbHelper;
 
 public class AddNewPersonActivity extends AppCompatActivity {
 

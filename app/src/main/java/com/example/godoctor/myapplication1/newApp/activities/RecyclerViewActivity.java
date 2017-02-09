@@ -1,4 +1,4 @@
-package com.example.godoctor.myapplication1.newApp;
+package com.example.godoctor.myapplication1.newApp.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.godoctor.myapplication1.R;
+import com.example.godoctor.myapplication1.newApp.DbHelper;
+import com.example.godoctor.myapplication1.newApp.models.Person;
+import com.example.godoctor.myapplication1.newApp.adapters.RecyclerAdapter;
 
 import java.util.ArrayList;
 

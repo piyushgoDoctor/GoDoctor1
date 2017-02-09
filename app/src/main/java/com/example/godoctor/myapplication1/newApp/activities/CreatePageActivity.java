@@ -1,12 +1,12 @@
-package com.example.godoctor.myapplication1.newApp;
+package com.example.godoctor.myapplication1.newApp.activities;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 
 import com.example.godoctor.myapplication1.R;
+import com.example.godoctor.myapplication1.newApp.adapters.Pager;
 
 public class CreatePageActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener{
 

@@ -10,7 +10,7 @@
     android:padding="16dp"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.example.godoctor.myapplication1.newApp.AddNewPersonActivity">
+    tools:context="com.example.godoctor.myapplication1.newApp.activities.AddNewPersonActivity">
 
 
     <Spinner
