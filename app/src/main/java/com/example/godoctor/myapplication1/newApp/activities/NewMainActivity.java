@@ -1,6 +1,7 @@
 package com.example.godoctor.myapplication1.newApp.activities;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -14,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +24,7 @@ import com.example.godoctor.myapplication1.R;
 import com.example.godoctor.myapplication1.newApp.DbHelper;
 import com.example.godoctor.myapplication1.newApp.adapters.ListAdapter;
 import com.example.godoctor.myapplication1.newApp.models.Person;
+import com.example.godoctor.myapplication1.newApp.models.Signup;
 
 import java.util.ArrayList;
 
@@ -53,6 +57,31 @@ public class NewMainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View hView =  navigationView.getHeaderView(0);
+
+
+        ImageView profilePic= (ImageView) hView.findViewById(R.id.profilePic);
+        TextView profileName= (TextView) hView.findViewById(R.id.profileName);
+        profilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NewMainActivity.this,SignupActivity.class));
+            }
+        });
+        profileName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NewMainActivity.this,SignupActivity.class));
+            }
+        });
+
+
+        ArrayList<Signup> profile=new DbHelper(NewMainActivity.this).getAllSignup();
+        if( profile != null && profile.size()!=0) {
+            profilePic.setImageBitmap(BitmapFactory.decodeFile(profile.get(0).getImageUrl()));
+            profileName.setText(profile.get(0).getName());
+        }
 
         person=new DbHelper(NewMainActivity.this).getAllPersons();
 

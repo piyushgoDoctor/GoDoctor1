@@ -89,6 +89,7 @@ public class ListAdapter extends ArrayAdapter<Person> {
             @Override
             public void onClick(View v) {
                 Intent in=new Intent(con,DetailsActivity.class);
+                in.putExtra("id",person.get(position).getId());
                 in.putExtra("name",person.get(position).getName());
                 in.putExtra("des",person.get(position).getDescription());
                 con.startActivity(in);

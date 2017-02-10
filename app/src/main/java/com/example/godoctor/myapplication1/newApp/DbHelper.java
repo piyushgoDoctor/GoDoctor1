@@ -8,7 +8,9 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.godoctor.myapplication1.newApp.models.Page;
 import com.example.godoctor.myapplication1.newApp.models.Person;
+import com.example.godoctor.myapplication1.newApp.models.Signup;
 
 public class DbHelper extends SQLiteOpenHelper {
 
@@ -30,8 +32,69 @@ public class DbHelper extends SQLiteOpenHelper {
         // TODO Auto-generated method stub
         db.execSQL(
                 "create table Persons " +
-                        "(id integer primary key, name text,des text,rel text, category text)"
-        );
+                        "(id integer primary key, name text,des text,rel text, category text)");
+        db.execSQL(
+                "create table Signup " +
+                        "(id integer primary key, name text,des text,imageUrl text)");
+        db.execSQL(
+                "create table page " +
+                        "(id integer primary key, person text,share text,summary text,image blob)");
+
+    }
+    public boolean insertPage (String person,  String share, String summary, byte[] imageUrl) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("person", person);
+        contentValues.put("share", share);
+        contentValues.put("summary", summary);
+        contentValues.put("image", imageUrl);
+
+        db.insert("page", null, contentValues);
+        return true;
+    }
+    public ArrayList<Page> getAllPage() {
+        ArrayList<Page> array_list = new ArrayList<>();
+
+        //hp = new HashMap();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from page", null );
+        res.moveToFirst();
+
+
+        while(res.isAfterLast() == false){
+            byte[] img=res.getBlob(res.getColumnIndex("image"));
+            array_list.add(new Page(res.getString(res.getColumnIndex("id")), res.getString(res.getColumnIndex("person")),
+                    res.getString(res.getColumnIndex("share")),res.getString(res.getColumnIndex("summary")),img));
+            res.moveToNext();
+        }
+        return array_list;
+    }
+
+    public ArrayList<Signup> getAllSignup() {
+        ArrayList<Signup> array_list = new ArrayList<>();
+
+        //hp = new HashMap();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from Signup", null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+            array_list.add(new Signup(res.getString(res.getColumnIndex("id")), res.getString(res.getColumnIndex("name")),
+                    res.getString(res.getColumnIndex("des")),res.getString(res.getColumnIndex("imageUrl"))));
+            res.moveToNext();
+        }
+        return array_list;
+    }
+
+    public boolean insertSignup (String name,  String des, String imageUrl) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("des", des);
+        contentValues.put("imageUrl", imageUrl);
+
+        db.insert("Signup", null, contentValues);
+        return true;
     }
 
     @Override
@@ -94,6 +157,20 @@ public class DbHelper extends SQLiteOpenHelper {
         while(res.isAfterLast() == false){
             array_list.add(new Person(res.getString(res.getColumnIndex(PERSONS_COLUMN_NAME)), res.getString(res.getColumnIndex(PERSONS_COLUMN_DES)),
                     res.getString(res.getColumnIndex(PERSONS_COLUMN_REL)),res.getString(res.getColumnIndex(PERSONS_COLUMN_CAT)),res.getString(res.getColumnIndex(PERSONS_COLUMN_ID))));
+            res.moveToNext();
+        }
+        return array_list;
+    }
+    public ArrayList<String> getAllPersonsName() {
+        ArrayList<String> array_list = new ArrayList<>();
+
+        //hp = new HashMap();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select name from Persons", null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+            array_list.add(res.getString(res.getColumnIndex(PERSONS_COLUMN_NAME)));
             res.moveToNext();
         }
         return array_list;

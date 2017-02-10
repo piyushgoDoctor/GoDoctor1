@@ -33,7 +33,7 @@ public class OcrActivity extends AppCompatActivity implements ActivityCompat.OnR
     private TessBaseAPI tessBaseApi;
     TextView textView;
     Uri outputFileUri;
-    private static final String lang = "eng";
+    private static final String lang= "eng";
     String result = "empty";
 //    private RequestPermissionsTool requestTool; //for API >=23 only
 
@@ -69,11 +69,8 @@ public class OcrActivity extends AppCompatActivity implements ActivityCompat.OnR
         try {
             String IMGS_PATH = Environment.getExternalStorageDirectory().toString() + "/TesseractSample/imgs";
             prepareDirectory(IMGS_PATH);
-
             String img_path = IMGS_PATH + "/ocr.jpg";
-
             outputFileUri = Uri.fromFile(new File(img_path));
-
             final Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
 

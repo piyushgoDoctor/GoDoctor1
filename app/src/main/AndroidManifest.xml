@@ -23,11 +23,11 @@
             android:name=".newApp.activities.NewMainActivity"
             android:label="@string/title_activity_new_main"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
         <activity android:name=".newApp.activities.AddNewPersonActivity" />
         <activity android:name=".newApp.activities.CreatePageActivity" />
@@ -71,7 +71,7 @@
         <activity android:name=".chatApp.ChatRoom" />
         <activity android:name=".pre.VolleyActivity" />
         <activity android:name=".RetroFit.RetroActivity" />
-        <activity android:name=".compression.VideoActivity"></activity>
+        <activity android:name=".compression.VideoActivity" />
         <activity android:name=".OCR.OcrActivity">
 
             <!-- <intent-filter> -->
@@ -81,7 +81,14 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".newApp.activities.AddNewPageActivity"></activity>
+        <activity android:name=".newApp.activities.AddNewPageActivity" />
+        <activity android:name=".newApp.activities.SignupActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
